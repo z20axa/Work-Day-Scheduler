@@ -26,15 +26,78 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!-- To display current day using moment library -->
       <p id="currentDay" class="lead"></p>
     </header>
 
     <!-- Display message that the appoinment has been added to local storage -->
-    <h5 style=display:block, id="localstorageMessage">Appoinment Added to localStorage </h5>
+    <h5 style="display:block", id="localstorageMessage">Appoinment Added to localStorage✔️</h5>
 
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- Timeblocks -->
+      <!-- 9AM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">09AM</h1>
+        <textarea id="9AM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="9AMBtn" class="fas fa-save saveBtn"></button>
+      </div>
 
+      <!-- 10AM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">10AM</h1>
+        <textarea id="10AM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="10AMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+
+      <!-- 11AM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">11AM</h1>
+        <textarea id="11AM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="11AMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+
+      <!-- 12PM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">12PM</h1>
+        <textarea id="12PM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="12PMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+
+      <!-- 1PM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">1PM</h1>
+        <textarea id="1PM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="1PMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+
+      <!-- 2PM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">2PM</h1>
+        <textarea id="2PM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="2PMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+
+      <!-- 3PM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">3PM</h1>
+        <textarea id="3PM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="3PMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+
+      <!-- 4PM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">4PM</h1>
+        <textarea id="4PM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="4PMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+
+      <!-- 5PM timeblock -->
+      <div class="time-block">
+        <h1 class="hour">5PM</h1>
+        <textarea id="5PM" class="text-area" placeholder="Enter your reminder"></textarea>
+        <button id="5PMBtn" class="fas fa-save saveBtn"></button>
+      </div>
+      <!-- End of timeblocks -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
