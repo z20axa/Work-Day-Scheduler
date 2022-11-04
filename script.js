@@ -40,18 +40,25 @@ function displaylocalstorageMessage(){
     $localstorageMessage.fadeOut(3000);
 };
 
-// function renderlocalstorageAppoinments(){
-//     // var appointmentTime = JSON.parse(localStorage.getItem("appointmentTime")); // get appointment time from local storage
-//     // var appointmentText = JSON.parse(localStorage.getItem("appointmentText")); // get appointment text from local storage
+function renderlocalstorageAppoinments(){
+    var appointmentTime = JSON.parse(localStorage.getItem("appointmentTime")); // get appointment time from local storage
+    var appointmentText = JSON.parse(localStorage.getItem("appointmentText")); // get appointment text from local storage
+
+    console.log(appointmentTime);
+    console.log(appointmentText);
+
+    $9AMtextArea.text(appointmentText);
+
+
   
-//     //   // checks if local storage items are empty
-//     //   if (appointmentTime===null || appointmentText===null){
-//     //       return;
-//     //   } else if (appointmentTime===9){  
-//     //   // modify the text/attributes for the appoint text for display
-//     //   $9AMtextArea.text(appointmentText);
-//     //  } else if (){
-//     //  };
+    //   // checks if local storage items are empty
+    //   if (appointmentTime===null || appointmentText===null){
+    //       return;
+    //   } else if (appointmentTime===9){  
+    //   // modify the text/attributes for the appointment text for display
+    //   $9AMtextArea.text(appointmentText);
+    //  };
+};
 
 $Btn9AM.on('click', function (event) {
     event.preventDefault();
@@ -75,5 +82,6 @@ $Btn9AM.on('click', function (event) {
     displaylocalstorageMessage();
 });
 
-// renderlocalstorageAppoinments();
+
+renderlocalstorageAppoinments();
 
