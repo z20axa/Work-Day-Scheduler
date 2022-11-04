@@ -4,9 +4,11 @@ body {
     line-height: 1;
 }
 
+/* CSS styling for current day display message */
 h5 {
     text-align: center;
     margin-bottom: 40px;
+    font-weight: bold;
 }
 
 textarea {
@@ -16,6 +18,8 @@ textarea {
     color: #000000;
     border-left: 1px solid black;
     padding: 10px;
+    /* added */
+    width: 80%;
 }
   
 .jumbotron {
@@ -33,6 +37,9 @@ textarea {
 .time-block {
     text-align: center;
     border-radius: 15px;
+    /* added */
+    display: flex;
+    margin-bottom: 5px;
 }
   
 .row {
@@ -68,6 +75,8 @@ textarea {
     border-bottom-right-radius: 15px;
     background-color: #06aed5;
     color: white;
+    /* added */
+    width: 5%;
 }
   
 .saveBtn i:hover {
