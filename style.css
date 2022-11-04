@@ -19,7 +19,7 @@ textarea {
     border-left: 1px solid black;
     padding: 10px;
     /* added */
-    width: 80%;
+    width: 85%;
 }
   
 .jumbotron {
@@ -39,7 +39,7 @@ textarea {
     border-radius: 15px;
     /* added */
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
   
 .row {
@@ -76,7 +76,7 @@ textarea {
     background-color: #06aed5;
     color: white;
     /* added */
-    width: 5%;
+    width: 10%;
 }
   
 .saveBtn i:hover {
