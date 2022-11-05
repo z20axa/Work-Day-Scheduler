@@ -50,27 +50,19 @@ $currentday.text(currentDay);
 //     console.log('$9AMtextArea.val()', $9AMtextArea);
 // };
 
+/**
+ * function declaration to display message that time and appoinment texts have been stored in local storage
+ */
 function displaylocalstorageMessage(){
     $localstorageMessage.css("display", "block");
     $localstorageMessage.fadeOut(3000);
 };
 
+/**
+ * function declaration to get the times and appoinment texts from local storage for the display to persist on the page even after page is refreshed
+ */
 function renderlocalstorageAppoinments(){
-    var appointmentTime9AM = JSON.parse(localStorage.getItem("appointmentTime9AM")); // get appointment time from local storage
-    var appointmentText9AM = JSON.parse(localStorage.getItem("appointmentText9AM")); // get appointment text from local storage
 
-    var appointmentTime10AM = JSON.parse(localStorage.getItem("appointmentTime10AM")); // get appointment time from local storage
-    var appointmentText10AM = JSON.parse(localStorage.getItem("appointmentText10AM")); // get appointment text from local storage
-
-    // console.log(appointmentTime);
-    // console.log(appointmentText);
-
-    $9AMtextArea.text(appointmentText9AM);
-    $10AMtextArea.text(appointmentText10AM);
-
-
-
-  
     //   // checks if local storage items are empty
     //   if (appointmentTime===null || appointmentText===null){
     //       return;
@@ -78,10 +70,59 @@ function renderlocalstorageAppoinments(){
     //   // modify the text/attributes for the appointment text for display
     //   $9AMtextArea.text(appointmentText);
     //  };
+
+
+    // gets 9AM appointment time and text from local storage
+    var appointmentTime9AM = JSON.parse(localStorage.getItem("appointmentTime9AM")); 
+    var appointmentText9AM = JSON.parse(localStorage.getItem("appointmentText9AM")); 
+
+    // gets 10AM appointment time and text from local storage
+    var appointmentTime10AM = JSON.parse(localStorage.getItem("appointmentTime10AM")); 
+    var appointmentText10AM = JSON.parse(localStorage.getItem("appointmentText10AM")); 
+
+    // gets 11AM appointment time and text from local storage
+    var appointmentTime11AM = JSON.parse(localStorage.getItem("appointmentTime11AM")); 
+    var appointmentText11AM = JSON.parse(localStorage.getItem("appointmentText11AM")); 
+
+    // gets 12PM appointment time and text from local storage
+    var appointmentTime12PM = JSON.parse(localStorage.getItem("appointmentTime12PM")); 
+    var appointmentText12PM = JSON.parse(localStorage.getItem("appointmentText12PM")); 
+
+    // gets 1PM appointment time and text from local storage
+    var appointmentTime1PM = JSON.parse(localStorage.getItem("appointmentTime1PM")); 
+    var appointmentText1PM = JSON.parse(localStorage.getItem("appointmentText1PM")); 
+
+    // gets 2PM appointment time and text from local storage
+    var appointmentTime2PM = JSON.parse(localStorage.getItem("appointmentTime2PM")); 
+    var appointmentText2PM = JSON.parse(localStorage.getItem("appointmentText2PM")); 
+
+    // gets 3PM appointment time and text from local storage
+    var appointmentTime3PM = JSON.parse(localStorage.getItem("appointmentTime3PM")); 
+    var appointmentText3PM = JSON.parse(localStorage.getItem("appointmentText3PM")); 
+
+    // gets 4PM appointment time and text from local storage
+    var appointmentTime4PM = JSON.parse(localStorage.getItem("appointmentTime4PM")); 
+    var appointmentText4PM = JSON.parse(localStorage.getItem("appointmentText4PM")); 
+
+    // gets 5PM appointment time and text from local storage
+    var appointmentTime5PM = JSON.parse(localStorage.getItem("appointmentTime5PM")); 
+    var appointmentText5PM = JSON.parse(localStorage.getItem("appointmentText5PM")); 
+
+
+    // add the texts from local storage to the <textarea> elements to dispaly in the timeblocks
+    $9AMtextArea.text(appointmentText9AM);
+    $10AMtextArea.text(appointmentText10AM);
+    $11AMtextArea.text(appointmentText11AM);
+    $12PMtextArea.text(appointmentText12PM);
+    $1PMtextArea.text(appointmentText1PM);
+    $2PMtextArea.text(appointmentText2PM);
+    $3PMtextArea.text(appointmentText3PM);
+    $4PMtextArea.text(appointmentText4PM);
+    $5PMtextArea.text(appointmentText5PM);
 };
 
 // click event listener for 9AM appointments entered
-$Btn9AM.on('click', function (event) {
+$Btn9AM.on('click', function(event){
     // prevent page to refresh to see the appointment entered display still on the page
     event.preventDefault();
 
@@ -104,8 +145,8 @@ $Btn9AM.on('click', function (event) {
     displaylocalstorageMessage();
 });
 
-
-$Btn10AM.on('click', function (event) {
+// click event listener for 10AM appointments entered
+$Btn10AM.on('click', function(event){
     // prevent page to refresh to see the appointment entered display still on the page
     event.preventDefault();
 
@@ -116,6 +157,89 @@ $Btn10AM.on('click', function (event) {
     displaylocalstorageMessage();
 });
 
+// click event listener for 11AM appointments entered
+$Btn11AM.on('click', function(event){
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime11AM", JSON.stringify($Btn11AM.val()));
+    localStorage.setItem("appointmentText11AM", JSON.stringify($11AMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
+
+// click event listener for 12PM appointments entered
+$Btn12PM.on('click', function(event){
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime12PM", JSON.stringify($Btn12PM.val()));
+    localStorage.setItem("appointmentText12PM", JSON.stringify($12PMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
+
+// click event listener for 1PM appointments entered
+$Btn1PM.on('click', function(event){
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime1PM", JSON.stringify($Btn1PM.val()));
+    localStorage.setItem("appointmentText1PM", JSON.stringify($1PMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
+
+// click event listener for 2PM appointments entered
+$Btn2PM.on('click', function(event){
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime2PM", JSON.stringify($Btn2PM.val()));
+    localStorage.setItem("appointmentText2PM", JSON.stringify($2PMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
+
+// click event listener for 3PM appointments entered
+$Btn3PM.on('click', function(event){
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime3PM", JSON.stringify($Btn3PM.val()));
+    localStorage.setItem("appointmentText3PM", JSON.stringify($3PMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
+
+// click event listener for 4PM appointments entered
+$Btn4PM.on('click', function(event){
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime4PM", JSON.stringify($Btn4PM.val()));
+    localStorage.setItem("appointmentText4PM", JSON.stringify($4PMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
+
+// click event listener for 5PM appointments entered
+$Btn5PM.on('click', function(event){
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime5PM", JSON.stringify($Btn5PM.val()));
+    localStorage.setItem("appointmentText5PM", JSON.stringify($5PMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
 
 
 // function call to display the appointments saved in local storage
