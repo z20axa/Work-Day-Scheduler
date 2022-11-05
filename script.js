@@ -28,34 +28,113 @@ var $Btn5PM = $('#Btn5PM');
 
 // variable declarations by using moment JS library
 var currentDay = moment().format("dddd, MMMM Do");
-var currentTime = parseInt(moment().format("h"));
-
-console.log(currentTime);
-console.log(typeof(currentTime));
+var currentTime = parseInt(moment().format("h")); // parseInt to change to a number typeof
+// console.log('currentDAy', currentDay);
+// console.log('curentTime', currentTime);
+// console.log('curentTime', typeof(currentTime));
 
 // adds text to <p> element to display the current day 
 $currentday.text(currentDay);
 
-// function displaceappointmentColors(){
-//     /* background-color: #ff6961; present time color */
-//     /* background-color: #d3d3d3; past time color */
-//     /* background-color: #77dd77; future past time color*/
-//     if(currentTime===$9AMtextArea.val()){
-//         $9AMtextArea.css("background-color", "#ff6961");
-//     }else if(currentTime<$9AMtextArea.val()){
-//         $9AMtextArea.css("background-color", "#d3d3d3");
-//     }else{
-//         $9AMtextArea.css("background-color", "#77dd77");
-//     };
-//     console.log('$9AMtextArea.val()', $9AMtextArea);
-// };
+/**
+ * function declaration to display the textarea colors red (current), gray (past), and green (future) compared to the current time from moment js library
+ */
+function displayappointmentColors(){
+    // console.log('$Btn9AM value', parseInt($Btn9AM.val()));
+    // console.log('$Btn9AM value', typeof(parseInt($Btn9AM.val())));
+
+    /* background-color: #ff6961; red present textarea color */
+    /* background-color: #d3d3d3; gray past textarea color */
+    /* background-color: #77dd77; green future textarea color */
+
+    // textarea color display if/else conditions for 9AM timeblock
+    if(currentTime === parseInt($Btn9AM.val())){
+        $9AMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if(currentTime < parseInt($Btn9AM.val())){
+        $9AMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $9AMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 10AM timeblock
+    if(currentTime === parseInt($Btn10AM.val())){
+        $10AMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if(currentTime < parseInt($Btn10AM.val())){
+        $10AMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $10AMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 11AM timeblock
+    if(currentTime === parseInt($Btn11AM.val())){
+        $11AMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if(currentTime < parseInt($Btn11AM.val())){
+        $11AMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $11AMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 12PM timeblock
+    if(currentTime === parseInt($Btn12PM.val())){
+        $12PMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if(currentTime < parseInt($Btn12PM.val())){
+        $12PMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $12PMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 1PM timeblock
+    if((currentTime + 12) === parseInt($Btn1PM.val())){
+        $1PMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if((currentTime + 12) > parseInt($Btn1PM.val())){
+        $1PMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $1PMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 2PM timeblock
+    if((currentTime + 12) === parseInt($Btn2PM.val())){
+        $2PMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if((currentTime + 12) > parseInt($Btn2PM.val())){
+        $2PMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $2PMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 3PM timeblock
+    if((currentTime + 12) === parseInt($Btn3PM.val())){
+        $3PMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if((currentTime + 12) > parseInt($Btn3PM.val())){
+        $3PMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $3PMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 4PM timeblock
+    if((currentTime + 12) === parseInt($Btn4PM.val())){
+        $4PMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if((currentTime + 12) > parseInt($Btn4PM.val())){
+        $4PMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $4PMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+
+    // textarea color display if/else conditions for 5PM timeblock
+    if((currentTime + 12) === parseInt($Btn5PM.val())){
+        $5PMtextArea.css("background-color", "#ff6961"); // red present textarea color
+    }else if((currentTime + 12) > parseInt($Btn5PM.val())){
+        $5PMtextArea.css("background-color", "#d3d3d3"); // gray past textarea color
+    }else{
+        $5PMtextArea.css("background-color", "#77dd77"); // green future textarea color
+    };
+};
 
 /**
  * function declaration to display message that the time and appoinment text has been stored in local storage
  */
 function displaylocalstorageMessage(){
-    $localstorageMessage.css("display", "block");
-    $localstorageMessage.fadeOut(3000);
+    $localstorageMessage.css("display", "block"); // change css display from none to block to display on the page
+    $localstorageMessage.fadeOut(3000); // to disappear/fade out diplay message after 3 secs
 };
 
 /**
@@ -227,9 +306,11 @@ $Btn5PM.on('click', function(event){
     displaylocalstorageMessage();
 });
 
+// // function call to displace the colors for present, past, and future
+displayappointmentColors();
+
 // function call to display the appointments saved in local storage
 renderlocalstorageAppoinments();
 
-// // function call to displace the colors for present, past, and future
-// displaceappointmentColors();
+
 
