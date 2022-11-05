@@ -34,7 +34,7 @@ THEN the saved events persist
 
 ## Website Link
 
-<!-- Follow [THIS LINK](https://z20axa.github.io/Timed-Coding-Quiz/) -->
+Follow [THIS LINK](https://z20axa.github.io/Work-Day-Scheduler/)
 
 ## Technologies Used
 
@@ -46,6 +46,4 @@ THEN the saved events persist
 
 ## Deployed Website ScreenShot
 
-<!-- ![WebSite SreenShot1](Web_capture_3-11-2022_222415_.jpeg "WebSite ScreenShot1")
-![WebSite SreenShot2](Web_capture_3-11-2022_222453_.jpeg "WebSite ScreenShot2")
-![WebSite SreenShot3](Web_capture_3-11-2022_222512_.jpeg "WebSite ScreenShot3") -->
+![WebSite SreenShot](Web_capture_5-11-2022_144314_.jpeg "WebSite ScreenShot")
