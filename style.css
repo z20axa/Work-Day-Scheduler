@@ -108,4 +108,12 @@ textarea {
         max-width: 540px;
     }
 }
+
+@media (min-width: 500px){
+    .container{
+        max-width: 480px;
+    }
+}
+
+
   
