@@ -29,26 +29,26 @@ var $Btn5PM = $('#Btn5PM');
 // variable declarations by using moment JS library
 var currentDay = moment().format("dddd, MMMM Do");
 var currentTime = parseInt(moment().format("h"));
-console.log(currentDay);
+
 console.log(currentTime);
 console.log(typeof(currentTime));
 
-// adds text to <p> element id=currentDay 
+// adds text to <p> element to display the current day 
 $currentday.text(currentDay);
 
-function displaceappointmentColors(){
-    /* background-color: #ff6961; present time color */
-    /* background-color: #d3d3d3; past time color */
-    /* background-color: #77dd77; future past time color*/
-    if(currentTime===$9AMtextArea.val()){
-        $9AMtextArea.css("background-color", "#ff6961");
-    }else if(currentTime<$9AMtextArea.val()){
-        $9AMtextArea.css("background-color", "#d3d3d3");
-    }else{
-        $9AMtextArea.css("background-color", "#77dd77");
-    };
-    console.log('$9AMtextArea.val()', $9AMtextArea);
-};
+// function displaceappointmentColors(){
+//     /* background-color: #ff6961; present time color */
+//     /* background-color: #d3d3d3; past time color */
+//     /* background-color: #77dd77; future past time color*/
+//     if(currentTime===$9AMtextArea.val()){
+//         $9AMtextArea.css("background-color", "#ff6961");
+//     }else if(currentTime<$9AMtextArea.val()){
+//         $9AMtextArea.css("background-color", "#d3d3d3");
+//     }else{
+//         $9AMtextArea.css("background-color", "#77dd77");
+//     };
+//     console.log('$9AMtextArea.val()', $9AMtextArea);
+// };
 
 function displaylocalstorageMessage(){
     $localstorageMessage.css("display", "block");
@@ -56,13 +56,20 @@ function displaylocalstorageMessage(){
 };
 
 function renderlocalstorageAppoinments(){
-    var appointmentTime = JSON.parse(localStorage.getItem("appointmentTime")); // get appointment time from local storage
-    var appointmentText = JSON.parse(localStorage.getItem("appointmentText")); // get appointment text from local storage
+    var appointmentTime9AM = JSON.parse(localStorage.getItem("appointmentTime9AM")); // get appointment time from local storage
+    var appointmentText9AM = JSON.parse(localStorage.getItem("appointmentText9AM")); // get appointment text from local storage
+
+    var appointmentTime10AM = JSON.parse(localStorage.getItem("appointmentTime10AM")); // get appointment time from local storage
+    var appointmentText10AM = JSON.parse(localStorage.getItem("appointmentText10AM")); // get appointment text from local storage
 
     // console.log(appointmentTime);
     // console.log(appointmentText);
 
-    $9AMtextArea.text(appointmentText);
+    $9AMtextArea.text(appointmentText9AM);
+    $10AMtextArea.text(appointmentText10AM);
+
+
+
   
     //   // checks if local storage items are empty
     //   if (appointmentTime===null || appointmentText===null){
@@ -73,30 +80,47 @@ function renderlocalstorageAppoinments(){
     //  };
 };
 
+// click event listener for 9AM appointments entered
 $Btn9AM.on('click', function (event) {
+    // prevent page to refresh to see the appointment entered display still on the page
     event.preventDefault();
-    // console.log(event);
-    // console.log(this);
-    // console.log(event.target);
-    // var child = event.target;
-    // console.log(child);
-    console.log($Btn9AM.val());
-    // console.log($9AMtextArea.val());
-    // checks to make sure appoinment text entered is not blank
-    if($9AMtextArea.val() === ""){
-      alert("Appoinment text cannot be blank!!!");
-    }else{
-    // store appoinment time and text to local storage 
-    localStorage.setItem("appointmentTime", JSON.stringify($Btn9AM.val()));
-    localStorage.setItem("appointmentText", JSON.stringify($9AMtextArea.val()));
-    };
 
+    // // checks to make sure appoinment text entered is not blank
+    // if($9AMtextArea.val() === ""){
+    //   alert("Appoinment text cannot be blank!!!");
+    // }else{
+    // // store appoinment time and text to local storage 
+    // localStorage.setItem("appointmentTime", JSON.stringify($Btn9AM.val()));
+    // localStorage.setItem("appointmentText", JSON.stringify($9AMtextArea.val()));
+    // };
+
+    // console.log($Btn9AM.val());
+    // console.log($9AMtextArea.val());
+
+    localStorage.setItem("appointmentTime9AM", JSON.stringify($Btn9AM.val()));
+    localStorage.setItem("appointmentText9AM", JSON.stringify($9AMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
     displaylocalstorageMessage();
 });
+
+
+$Btn10AM.on('click', function (event) {
+    // prevent page to refresh to see the appointment entered display still on the page
+    event.preventDefault();
+
+    localStorage.setItem("appointmentTime10AM", JSON.stringify($Btn10AM.val()));
+    localStorage.setItem("appointmentText10AM", JSON.stringify($10AMtextArea.val()));
+
+    // function call to display the message that the appointment has been stored in local storage
+    displaylocalstorageMessage();
+});
+
+
 
 // function call to display the appointments saved in local storage
 renderlocalstorageAppoinments();
 
-// function call to displace the colors for present, past, and future
-displaceappointmentColors();
+// // function call to displace the colors for present, past, and future
+// displaceappointmentColors();
 
