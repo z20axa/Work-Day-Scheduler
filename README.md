@@ -46,4 +46,4 @@ Follow [THIS LINK](https://z20axa.github.io/Work-Day-Scheduler/)
 
 ## Deployed Website ScreenShot
 
-![WebSite SreenShot](Web_capture_5-11-2022_144314_.jpeg "WebSite ScreenShot")
+![WebSite SreenShot](Web_capture_5-11-2022_15024_.jpeg "WebSite ScreenShot")
